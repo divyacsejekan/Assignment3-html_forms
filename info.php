@@ -10,6 +10,11 @@
 			$high_qual=$_POST["high_qual"];
 			$dob=$_POST["dob"];
             
+            $myfile=fopen("CandidateInfo.txt","a") or die("unable to open file");
+			$txt="Name:".$name."\nAddress:".$addr."\nEmail Id:".$email."\nMobile No:".$mobno."\nHighest Qualification:".$high_qual."\nDOB:".$dob."\n\n\n\n";
+			fwrite($myfile,$txt);
+			fclose($myfile);
+            echo "Name:".$name."<br>Address:".$addr."<br>Email Id:".$email."<br>Mobile No:".$mobno."<br>Highest Qualification:".$high_qual."<br>DOB:".$dob;
             
 	            try {
                 $user = "root";
